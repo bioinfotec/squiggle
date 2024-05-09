@@ -194,11 +194,13 @@ def visualize(
         ):
             seqs.append(
                 Box(
-                    color=palette[color_counter + 1 if color_counter > 2 else 3][
-                        color_counter
-                    ]
-                    if color
-                    else "black",
+                    color=(
+                        palette[color_counter + 1 if color_counter > 2 else 3][
+                            color_counter
+                        ]
+                        if color
+                        else "black"
+                    ),
                     name=_f if mode == "file" else seq.name,
                     raw_seq=str(seq),
                 )
@@ -297,10 +299,8 @@ def visualize(
                 x_axis_label=axis_labels[method]["x"],
                 y_axis_label=axis_labels[method]["y"],
                 title=title,
-                x_range=x_range,
-                y_range=y_range,
-                plot_width=dimensions[0],
-                plot_height=dimensions[1],
+                width=dimensions[0],
+                height=dimensions[1],
                 output_backend=output_backend,
             )
         )
